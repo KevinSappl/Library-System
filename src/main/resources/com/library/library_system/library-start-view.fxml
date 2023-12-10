@@ -5,21 +5,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.library_system.LibraryStartController">
     <top>
         <HBox alignment="BASELINE_CENTER" prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="80.0">
-                <Button mnemonicParsing="false" text="Tracking"/>
+                <Button mnemonicParsing="false" onAction="#onClickTracking" text="Tracking" />
             </HBox>
             <HBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0">
-                <Button mnemonicParsing="false" text="Add Book"/>
+                <Button mnemonicParsing="false" onAction="#onClickAddBook" text="Add Book" />
             </HBox>
-            <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0"
-                  HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                 <padding>
-                    <Insets right="5.0"/>
+                    <Insets right="5.0" />
                 </padding>
-                <Button mnemonicParsing="false" text="Login"/>
+                <Button mnemonicParsing="false" onAction="#onClickLogin" text="Login" />
             </HBox>
         </HBox>
     </top>
@@ -34,7 +33,7 @@
            </HBox>
            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
                <TextField prefHeight="26.0" prefWidth="294.0" promptText="Search for Books" />
-               <Button mnemonicParsing="false" text="Search" />
+               <Button mnemonicParsing="false" onAction="#onClickSearch" text="Search" />
            </HBox>
        </VBox>
    </center>
