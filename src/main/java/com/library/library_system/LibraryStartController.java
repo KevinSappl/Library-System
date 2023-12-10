@@ -5,12 +5,29 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class LibraryStartController {
+
+    private LibraryLoginController loginController;
+
+    public void setLoginController(LibraryLoginController loginController) {
+        this.loginController = loginController;
+    }
+
+    @FXML
+    private TextField tfSearchBooks;
+    @FXML
+    private Button btnSearch;
+    @FXML
+    private Button btnLogin;
+    @FXML
+    private Button btnLogout;
 
     @FXML
     private void onClickTracking(ActionEvent event) {
@@ -32,7 +49,6 @@ public class LibraryStartController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("library-addBook-view.fxml"));
             Parent root = loader.load();
-
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Add Book View");
@@ -47,6 +63,12 @@ public class LibraryStartController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("library-login-view.fxml"));
             Parent root = loader.load();
+            LibraryLoginController controller = loader.getController();
+            controller.setStartController(this); // Setze eine Referenz auf den LibraryStartController im LibraryLoginController
+            controller.setSearchButton(btnSearch);
+            controller.setSearchField(tfSearchBooks);
+            controller.setLoginButton(btnLogin);
+            controller.setLogoutButton(btnLogout);
 
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
@@ -70,5 +92,13 @@ public class LibraryStartController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void onClickLogout(ActionEvent event) {
+        btnSearch.setDisable(true);
+        tfSearchBooks.setDisable(true);
+        btnLogin.setDisable(false);
+        btnLogout.setDisable(true);
     }
 }

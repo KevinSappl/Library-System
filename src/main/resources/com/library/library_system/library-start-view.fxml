@@ -18,7 +18,11 @@
                 <padding>
                     <Insets right="5.0" />
                 </padding>
-                <Button mnemonicParsing="false" onAction="#onClickLogin" text="Login" />
+                <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#onClickLogin" text="Login">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin></Button>
+            <Button fx:id="btnLogout" disable="true" mnemonicParsing="false" onAction="#onClickLogout" text="Logout" />
             </HBox>
         </HBox>
     </top>
@@ -32,8 +36,8 @@
                </Label>
            </HBox>
            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
-               <TextField prefHeight="26.0" prefWidth="294.0" promptText="Search for Books" />
-               <Button mnemonicParsing="false" onAction="#onClickSearch" text="Search" />
+               <TextField fx:id="tfSearchBooks" disable="true" prefHeight="26.0" prefWidth="294.0" promptText="Search for Books" />
+               <Button fx:id="btnSearch" disable="true" mnemonicParsing="false" onAction="#onClickSearch" text="Search" />
            </HBox>
        </VBox>
    </center>

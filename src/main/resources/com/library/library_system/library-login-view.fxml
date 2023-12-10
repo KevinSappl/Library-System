@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.library_system.LibraryLoginController">
    <top>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <Label text="Login">
             <font>
-               <Font size="36.0"/>
+               <Font size="36.0" />
             </font>
          </Label>
       </HBox>
@@ -20,32 +20,35 @@
          <HBox alignment="CENTER" prefHeight="90.0">
             <Label text="username">
                <HBox.margin>
-                  <Insets right="5.0"/>
+                  <Insets right="5.0" />
                </HBox.margin>
             </Label>
-            <TextField prefWidth="149.0"/>
+            <TextField fx:id="tfUsername" prefWidth="149.0" />
          </HBox>
          <HBox alignment="CENTER" prefHeight="90.0">
             <Label text="password">
                <HBox.margin>
-                  <Insets right="5.0"/>
+                  <Insets right="5.0" />
                </HBox.margin>
             </Label>
-            <TextField/>
+            <PasswordField fx:id="pfPassword" />
          </HBox>
          <HBox alignment="CENTER">
             <HBox alignment="TOP_RIGHT" prefHeight="16.0" prefWidth="242.0">
-               <Button mnemonicParsing="false" text="Login"/>
+               <Button mnemonicParsing="false" onAction="#onClickLogin" text="Login" />
             </HBox>
+         </HBox>
+         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+            <Label fx:id="lbLoginResult"/>
          </HBox>
       </VBox>
    </center>
    <bottom>
       <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <padding>
-            <Insets right="10.0"/>
+            <Insets right="10.0" />
          </padding>
-         <Button mnemonicParsing="false" text="Register"/>
+         <Button mnemonicParsing="false" text="Register" />
       </HBox>
    </bottom>
 </BorderPane>
