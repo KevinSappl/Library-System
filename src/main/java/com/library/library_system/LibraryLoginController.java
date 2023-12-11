@@ -2,9 +2,11 @@ package com.library.library_system;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -21,6 +23,8 @@ public class LibraryLoginController {
     private Button btnLogin;
     private Button btnLogout;
     private TextField tfSearchBooks;
+    private Button btnTracking;
+    private Button btnAddBook;
 
     public void setStartController(LibraryStartController startController) {
         this.startController = startController;
@@ -48,8 +52,21 @@ public class LibraryLoginController {
             btnSearch.setDisable(false);
             btnLogin.setDisable(true);
             btnLogout.setDisable(false);
+            btnTracking.setDisable(false);
+            btnAddBook.setDisable(false);
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.close();
+
         }else{
             lbLoginResult.setText("username or password wrong");
         }
+    }
+
+    public void setTrackingButton(Button btnTracking) {
+        this.btnTracking = btnTracking;
+    }
+
+    public void setAddBookButton(Button btnAddBook) {
+        this.btnAddBook = btnAddBook;
     }
 }

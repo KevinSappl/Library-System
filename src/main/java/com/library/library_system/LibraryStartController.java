@@ -28,6 +28,10 @@ public class LibraryStartController {
     private Button btnLogin;
     @FXML
     private Button btnLogout;
+    @FXML
+    public Button btnTracking;
+    @FXML
+    public Button btnAddBook;
 
     @FXML
     private void onClickTracking(ActionEvent event) {
@@ -69,6 +73,8 @@ public class LibraryStartController {
             controller.setSearchField(tfSearchBooks);
             controller.setLoginButton(btnLogin);
             controller.setLogoutButton(btnLogout);
+            controller.setTrackingButton(btnTracking);
+            controller.setAddBookButton(btnAddBook);
 
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
