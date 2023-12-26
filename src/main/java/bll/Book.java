@@ -1,4 +1,9 @@
-package com.library.library_system;
+package bll;
+
+import data.CsvReader;
+import data.CsvWriter;
+
+import java.util.List;
 
 public class Book {
     private String title;
@@ -21,5 +26,13 @@ public class Book {
 
     public Status getStatus() {
         return status;
+    }
+
+    public static void writeData(Book book) {
+        CsvWriter.writeBookToCsv("books.csv", book);
+    }
+
+    public static List<Book> readData() {
+        return CsvReader.readBooksFromCsv("books.csv");
     }
 }

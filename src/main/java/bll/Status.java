@@ -1,4 +1,4 @@
-package com.library.library_system;
+package bll;
 
 public enum Status {
     AVAILABLE,

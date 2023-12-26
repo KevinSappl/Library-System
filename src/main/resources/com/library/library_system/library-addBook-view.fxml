@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.library_system.LibraryAddBookController">
     <top>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <Label text="Add Book">
@@ -27,7 +28,7 @@
                         <Insets right="5.0" />
                     </HBox.margin>
                 </Label>
-                <TextField prefWidth="149.0" />
+                <TextField fx:id="tfBookTitle" prefWidth="149.0" />
             </HBox>
             <HBox alignment="CENTER" prefHeight="90.0">
                 <Label prefWidth="60.0" text="ISBN">
@@ -35,13 +36,16 @@
                         <Insets right="5.0" />
                     </HBox.margin>
                 </Label>
-                <TextField />
+                <TextField fx:id="tfISBN" />
             </HBox>
             <HBox alignment="CENTER">
                 <HBox alignment="TOP_RIGHT" prefHeight="16.0" prefWidth="242.0">
-                    <Button mnemonicParsing="false" text="Add" />
+                    <Button mnemonicParsing="false" onAction="#onClickAdd" text="Add" />
                 </HBox>
             </HBox>
         </VBox>
     </center>
+   <bottom>
+      <Label fx:id="lbStatus" text=" " BorderPane.alignment="CENTER_LEFT" />
+   </bottom>
 </BorderPane>

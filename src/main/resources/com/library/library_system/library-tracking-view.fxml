@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.library_system.LibraryTrackingController">
     <top>
         <HBox alignment="BASELINE_LEFT" prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -35,11 +35,11 @@
          </children></HBox>
     </top>
     <center>
-        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="tvBooks">
             <columns>
-                <TableColumn prefWidth="75.0" text="Title" />
-                <TableColumn prefWidth="75.0" text="ISBN" />
-                <TableColumn prefWidth="75.0" text="State" />
+                <TableColumn prefWidth="75.0" text="Title" fx:id="titleColumn"/>
+                <TableColumn prefWidth="75.0" text="ISBN" fx:id="isbnColumn"/>
+                <TableColumn prefWidth="75.0" text="State" fx:id="statusColumn"/>
                 <TableColumn prefWidth="75.0" text="Edit" />
                 <TableColumn prefWidth="75.0" text="Delete" />
             </columns>

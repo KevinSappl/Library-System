@@ -5,4 +5,6 @@ module com.library.library_system {
 
     opens com.library.library_system to javafx.fxml;
     exports com.library.library_system;
+    exports bll;
+    opens bll to javafx.fxml;
 }

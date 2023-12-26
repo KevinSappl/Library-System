@@ -5,17 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="398dae56-35e7-485a-b7dd-b41affb27972" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/CsvReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/CsvWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bll/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryAddBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryAddBookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryStartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryStartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bll/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-addBook-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-addBook-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-start-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-start-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-tracking-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-tracking-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,16 +49,28 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sappl/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.35287356&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sappl\OneDrive - Alpen-Adria Universität Klagenfurt\2023_WS\Interaktive Systeme\Library System Group F\src\main\java\data" />
+      <recent name="C:\Users\sappl\OneDrive - Alpen-Adria Universität Klagenfurt\2023_WS\Interaktive Systeme\Library System Group F\src\main\java\bll" />
+      <recent name="C:\Users\sappl\OneDrive - Alpen-Adria Universität Klagenfurt\2023_WS\Interaktive Systeme\Library System Group F\src\main\java\com\library\library_system" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="LibraryStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.library.library_system.LibraryStart" />
       <module name="Library_System" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.library.library_system.*" />
+          <option name="PATTERN" value="bll.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -67,5 +94,16 @@
       <updated>1702073185002</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
