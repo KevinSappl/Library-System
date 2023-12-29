@@ -106,9 +106,9 @@ public class LibraryStartController {
         tfSearchBooks.setDisable(true);
         btnLogin.setDisable(false);
         btnLogout.setDisable(true);
-        tfSearchBooks.setDisable(false);
-        btnSearch.setDisable(false);
-        btnTracking.setDisable(false);
-        btnAddBook.setDisable(false);
+        tfSearchBooks.setDisable(true);
+        btnSearch.setDisable(true);
+        btnTracking.setDisable(true);
+        btnAddBook.setDisable(true);
     }
 }
