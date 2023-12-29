@@ -25,16 +25,14 @@
                 </Label>
                 <TextField fx:id="tfBookTitle" prefWidth="149.0" />
             </HBox>
-         <HBox alignment="CENTER" prefHeight="90.0">
-            <children>
-               <Label prefWidth="90.0" text="Author">
-                  <HBox.margin>
-                     <Insets right="5.0" />
-                  </HBox.margin>
-               </Label>
-               <TextField fx:id="tfAuthor" />
-            </children>
-         </HBox>
+            <HBox alignment="CENTER" prefHeight="90.0">
+                <Label prefWidth="90.0" text="Author">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="tfAuthor"/>
+            </HBox>
             <HBox alignment="CENTER" prefHeight="90.0">
                 <Label prefWidth="90.0" text="ISBN">
                     <HBox.margin>
@@ -43,26 +41,22 @@
                 </Label>
                 <TextField fx:id="tfISBN" />
             </HBox>
-         <HBox alignment="CENTER" prefHeight="90.0">
-            <children>
-               <Label prefWidth="90.0" text="Publication Date">
-                  <HBox.margin>
-                     <Insets right="5.0" />
-                  </HBox.margin>
-               </Label>
-               <DatePicker fx:id="dpDate" prefWidth="150.0" />
-            </children>
-         </HBox>
-         <HBox alignment="CENTER" prefHeight="90.0">
-            <children>
-               <Label prefWidth="90.0" text="Pages">
-                  <HBox.margin>
-                     <Insets right="5.0" />
-                  </HBox.margin>
-               </Label>
-               <TextField fx:id="tfPages" />
-            </children>
-         </HBox>
+            <HBox alignment="CENTER" prefHeight="90.0">
+                <Label prefWidth="90.0" text="Publication Date">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </Label>
+                <DatePicker fx:id="dpDate" prefWidth="150.0"/>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="90.0">
+                <Label prefWidth="90.0" text="Pages">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="tfPages"/>
+            </HBox>
             <HBox alignment="CENTER">
                 <HBox alignment="TOP_RIGHT" prefHeight="16.0" prefWidth="242.0">
                     <Button mnemonicParsing="false" onAction="#onClickAdd" text="Add" />
