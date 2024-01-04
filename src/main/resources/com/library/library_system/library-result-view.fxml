@@ -17,8 +17,11 @@
    <center>
       <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="Title" />
-          <TableColumn prefWidth="75.0" text="ISBN" />
+            <TableColumn prefWidth="75.0" text="Title" />
+          <TableColumn prefWidth="75.0" text="Author" />
+            <TableColumn prefWidth="75.0" text="ISBN" />
+          <TableColumn prefWidth="75.0" text="Publication Date" />
+            <TableColumn prefWidth="75.0" text="Pages" />
             <TableColumn prefWidth="75.0" text="State" />
             <TableColumn prefWidth="75.0" text="Edit" />
             <TableColumn prefWidth="75.0" text="Delete" />

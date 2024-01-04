@@ -35,11 +35,14 @@
          </children></HBox>
     </top>
     <center>
-        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="tvBooks">
+        <TableView fx:id="tvBooks" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <columns>
-                <TableColumn prefWidth="75.0" text="Title" fx:id="titleColumn"/>
-                <TableColumn prefWidth="75.0" text="ISBN" fx:id="isbnColumn"/>
-                <TableColumn prefWidth="75.0" text="State" fx:id="statusColumn"/>
+            <TableColumn fx:id="titleColumn1" prefWidth="75.0" text="Title" />
+                <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Author" />
+                <TableColumn fx:id="isbnColumn" prefWidth="75.0" text="ISBN" />
+            <TableColumn fx:id="titleColumn2" prefWidth="75.0" text="Publication Date" />
+            <TableColumn fx:id="titleColumn21" prefWidth="75.0" text="Pages" />
+                <TableColumn fx:id="statusColumn" prefWidth="75.0" text="State" />
                 <TableColumn prefWidth="75.0" text="Edit" />
                 <TableColumn prefWidth="75.0" text="Delete" />
             </columns>
