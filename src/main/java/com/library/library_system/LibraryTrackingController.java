@@ -5,14 +5,19 @@ import bll.Status;
 import data.CsvReader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -109,8 +114,9 @@ public class LibraryTrackingController implements Initializable {
 
                     {
                         btn.setOnAction((ActionEvent event) -> {
-                            Book data = getTableView().getItems().get(getIndex());
+                            Book book = getTableView().getItems().get(getIndex());
                             // Hier Aktion mit dem Objekt data ausführen
+                            openEditWindow(book);
                         });
                     }
 
@@ -213,6 +219,21 @@ public class LibraryTrackingController implements Initializable {
         List<Book> unavailableBooks = CsvReader.readBooksFromCsvByStatus("books.csv", Status.UNAVAILABLE);
         tvUnavailableBooks.getItems().setAll(unavailableBooks);
 
+    }
+    private void openEditWindow(Book book) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("library-editBook-view.fxml"));
+            Parent root = loader.load();
+
+            LibraryEditBookController editBookController = loader.getController();
+            editBookController.setBookDetails(book);
+
+            Stage editStage = new Stage();
+            editStage.setScene(new Scene(root));
+            editStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
