@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398dae56-35e7-485a-b7dd-b41affb27972" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/CsvReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/CsvWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="398dae56-35e7-485a-b7dd-b41affb27972" name="Changes" comment="Add Books has now additional parameter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bll/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryAddBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryAddBookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryStartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryStartController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bll/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-addBook-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-addBook-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-start-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-start-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/CsvReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CsvReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-tracking-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-tracking-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,17 +83,20 @@
       <option name="presentableId" value="Default" />
       <updated>1702073185002</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add Books is now functional">
+      <option name="closed" value="true" />
+      <created>1703622907295</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703622907295</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Books is now functional" />
+    <MESSAGE value="Add Books has now additional parameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Books has now additional parameter" />
   </component>
 </project>
