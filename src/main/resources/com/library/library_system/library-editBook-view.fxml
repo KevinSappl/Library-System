@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.library.library_system.LibraryEditBookController">
     <top>
         <HBox alignment="CENTER" prefHeight="88.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <Label text="Edit Book">
@@ -55,7 +55,7 @@
                         <Insets right="5.0" />
                     </HBox.margin>
                 </Label>
-                <TextField id="tfPages" fx:id="tfPages" />
+            <Spinner fx:id="spPages" />
             </HBox>
             <HBox alignment="CENTER" prefHeight="55.0">
                 <Label prefWidth="90.0" text="State">
@@ -63,11 +63,11 @@
                         <Insets right="5.0" />
                     </HBox.margin>
                 </Label>
-            <ComboBox id="cbState" prefWidth="150.0" />
+            <ComboBox id="cbState" fx:id="cbState" prefWidth="150.0" />
             </HBox>
             <HBox alignment="CENTER">
                 <HBox alignment="TOP_RIGHT" prefHeight="45.0" prefWidth="242.0">
-                    <Button id="btnSave" mnemonicParsing="false" text="Save" />
+                    <Button id="btnSave" fx:id="btnSave" mnemonicParsing="false" text="Save" />
                 </HBox>
             </HBox>
         </VBox>
