@@ -15,16 +15,16 @@
         </HBox>
     </top>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="tvBooks">
         <columns>
-            <TableColumn prefWidth="75.0" text="Title" />
-          <TableColumn prefWidth="75.0" text="Author" />
-            <TableColumn prefWidth="75.0" text="ISBN" />
-          <TableColumn prefWidth="75.0" text="Publication Date" />
-            <TableColumn prefWidth="75.0" text="Pages" />
-            <TableColumn prefWidth="75.0" text="State" />
-            <TableColumn prefWidth="75.0" text="Edit" />
-            <TableColumn prefWidth="75.0" text="Delete" />
+            <TableColumn prefWidth="75.0" text="Title" fx:id="titleColumn"/>
+          <TableColumn prefWidth="75.0" text="Author" fx:id="authorColumn"/>
+            <TableColumn prefWidth="75.0" text="ISBN" fx:id="isbnColumn"/>
+          <TableColumn prefWidth="75.0" text="Publication Date" fx:id="publicationDateColumn"/>
+            <TableColumn prefWidth="75.0" text="Pages" fx:id="pagesColumn"/>
+            <TableColumn prefWidth="75.0" text="State" fx:id="statusColumn"/>
+            <TableColumn prefWidth="75.0" text="Edit" fx:id="editColumn"/>
+            <TableColumn prefWidth="75.0" text="Delete" fx:id="deleteColumn"/>
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

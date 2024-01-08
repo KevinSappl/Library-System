@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="398dae56-35e7-485a-b7dd-b41affb27972" name="Changes" comment="Add Books has now additional parameter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-tracking-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-tracking-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bll/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bll/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryResultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryResultController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryStartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryStartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/CsvReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CsvReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/CsvWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CsvWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-result-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-result-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,5 +110,16 @@
     <MESSAGE value="Tracking Page now has tabs" />
     <MESSAGE value="Add Books has now additional parameter" />
     <option name="LAST_COMMIT_MESSAGE" value="Add Books has now additional parameter" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryResultController.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

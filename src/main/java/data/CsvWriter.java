@@ -2,9 +2,7 @@ package data;
 
 import bll.Book;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Date;
@@ -16,13 +14,15 @@ public class CsvWriter {
         File file = new File(fileName);
         boolean writeHeader = !file.exists();
 
-        try (FileWriter writer = new FileWriter(file, true)) {
+        try (FileWriter writer = new FileWriter(file, false)) {
             if (writeHeader) {
                 writer.append("Title,Author,ISBN,Pages,PublicationDate,Status\n");
             }
-
+            int count = 1;
             for (Book book : books) {
-                writer.append(book.getTitle())
+                writer.append(Integer.toString(count))
+                        .append(",")
+                        .append(book.getTitle())
                         .append(",")
                         .append(book.getAuthor())
                         .append(",")
@@ -34,6 +34,7 @@ public class CsvWriter {
                         .append(",")
                         .append(book.getStatus().toString())
                         .append("\n");
+                count++;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,7 +50,9 @@ public class CsvWriter {
                 writer.append("Title,Author,ISBN,Pages,PublicationDate,Status\n");
             }
 
-            writer.append(book.getTitle())
+            writer.append(Integer.toString(nextId(fileName)))
+                    .append(",")
+                    .append(book.getTitle())
                     .append(",")
                     .append(book.getAuthor())
                     .append(",")
@@ -64,5 +67,15 @@ public class CsvWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static int nextId(String filePath) {
+        int count = 0;
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            count++;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return count;
     }
 }

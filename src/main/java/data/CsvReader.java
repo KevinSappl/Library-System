@@ -6,10 +6,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 import bll.Book;
 import bll.Status;
@@ -29,14 +26,15 @@ public class CsvReader {
                 String[] bookData = line.split(",");
 
                 if (bookData.length >= 6) {
-                    String title = bookData[0];
-                    String author = bookData[1];
-                    String isbn = bookData[2];
-                    int pages = Integer.parseInt(bookData[3]);
-                    Date publicationDate = sdf.parse(bookData[4]);
-                    Status status = Status.valueOf(bookData[5]); // Annahme, dass Status ein enum ist
+                    int id = Integer.parseInt(bookData[0]);
+                    String title = bookData[1];
+                    String author = bookData[2];
+                    String isbn = bookData[3];
+                    int pages = Integer.parseInt(bookData[4]);
+                    Date publicationDate = sdf.parse(bookData[5]);
+                    Status status = Status.valueOf(bookData[6]); // Annahme, dass Status ein enum ist
 
-                    books.add(new Book(title, author, isbn, pages, publicationDate, status));
+                    books.add(new Book(id, title, author, isbn, pages, publicationDate, status));
                 }
             }
         } catch (IOException e) {
@@ -57,15 +55,46 @@ public class CsvReader {
             while ((line = br.readLine()) != null) {
                 String[] bookData = line.split(",");
 
-                if (bookData.length >= 6 && Status.valueOf(bookData[5]) == status) {
-                    String title = bookData[0];
-                    String author = bookData[1];
-                    String isbn = bookData[2];
-                    int pages = Integer.parseInt(bookData[3]);
-                    Date publicationDate = sdf.parse(bookData[4]);
-                    //Status status = Status.valueOf(bookData[5]); // Annahme, dass Status ein enum ist
+                if (bookData.length >= 6 && Status.valueOf(bookData[6]) == status) {
+                    int id = Integer.parseInt(bookData[0]);
+                    String title = bookData[1];
+                    String author = bookData[2];
+                    String isbn = bookData[3];
+                    int pages = Integer.parseInt(bookData[4]);
+                    Date publicationDate = sdf.parse(bookData[5]);
+                    //Status status = Status.valueOf(bookData[6]); // Annahme, dass Status ein enum ist
 
-                    books.add(new Book(title, author, isbn, pages, publicationDate, status));
+                    books.add(new Book(id, title, author, isbn, pages, publicationDate, status));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+        return books;
+    }
+    public static List<Book> readBooksFromCsvByTitle(String fileName, String title) {
+        List<Book> books = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            br.readLine(); // Überspringen der Kopfzeile
+
+            while ((line = br.readLine()) != null) {
+                String[] bookData = line.split(",");
+
+                if (bookData.length >= 6 && Objects.equals(bookData[1], title)) {
+                    int id = Integer.parseInt(bookData[0]);
+                    //String title = bookData[1];
+                    String author = bookData[2];
+                    String isbn = bookData[3];
+                    int pages = Integer.parseInt(bookData[4]);
+                    Date publicationDate = sdf.parse(bookData[5]);
+                    Status status = Status.valueOf(bookData[6]); // Annahme, dass Status ein enum ist
+
+                    books.add(new Book(id, title, author, isbn, pages, publicationDate, status));
                 }
             }
         } catch (IOException e) {
