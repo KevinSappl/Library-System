@@ -7,7 +7,6 @@
     <list default="true" id="398dae56-35e7-485a-b7dd-b41affb27972" name="Changes" comment="Add Books has now additional parameter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/CsvReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CsvReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-tracking-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-tracking-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,11 +90,20 @@
       <option name="project" value="LOCAL" />
       <updated>1703622907295</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Books has now additional parameter">
+      <option name="closed" value="true" />
+      <created>1704743104007</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704743104007</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Books is now functional" />
+    <MESSAGE value="Tracking Page now has tabs" />
     <MESSAGE value="Add Books has now additional parameter" />
     <option name="LAST_COMMIT_MESSAGE" value="Add Books has now additional parameter" />
   </component>

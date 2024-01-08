@@ -3,12 +3,15 @@ package com.library.library_system;
 import bll.Book;
 import bll.Status;
 import data.CsvReader;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -33,6 +36,10 @@ public class LibraryTrackingController implements Initializable {
     @FXML
     TableColumn<Book, String> availableStatusColumn;
     @FXML
+    TableColumn availableEditColumn;
+    @FXML
+    TableColumn availableDeleteColumn;
+    @FXML
     TableView<Book> tvBorrowedBooks;
     @FXML
     TableColumn<Book, String> borrowedTitleColumn;
@@ -47,6 +54,10 @@ public class LibraryTrackingController implements Initializable {
     @FXML
     TableColumn<Book, String> borrowedStatusColumn;
     @FXML
+    TableColumn borrowedEditColumn;
+    @FXML
+    TableColumn borrowedDeleteColumn;
+    @FXML
     TableView<Book> tvUnavailableBooks;
     @FXML
     TableColumn<Book, String> unavailableTitleColumn;
@@ -60,6 +71,10 @@ public class LibraryTrackingController implements Initializable {
     TableColumn<Book, Date> unavailablePublicationDateColumn;
     @FXML
     TableColumn<Book, String> unavailableStatusColumn;
+    @FXML
+    TableColumn unavailableEditColumn;
+    @FXML
+    TableColumn unavailableDeleteColumn;
 
 
     SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
@@ -84,6 +99,68 @@ public class LibraryTrackingController implements Initializable {
                 }
             }
         });
+
+        Callback<TableColumn<Book, Void>, TableCell<Book, Void>> editCellFactory = new Callback<>() {
+            @Override
+            public TableCell<Book, Void> call(final TableColumn<Book, Void> param) {
+                return new TableCell<>() {
+
+                    private final Button btn = new Button("Edit");
+
+                    {
+                        btn.setOnAction((ActionEvent event) -> {
+                            Book data = getTableView().getItems().get(getIndex());
+                            // Hier Aktion mit dem Objekt data ausführen
+                        });
+                    }
+
+                    @Override
+                    public void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(btn);
+                        }
+                    }
+                };
+            }
+        };
+
+        availableEditColumn.setCellFactory(editCellFactory);
+        borrowedEditColumn.setCellFactory(editCellFactory);
+        unavailableEditColumn.setCellFactory(editCellFactory);
+
+        Callback<TableColumn<Book, Void>, TableCell<Book, Void>> deleteCellFactory = new Callback<>() {
+            @Override
+            public TableCell<Book, Void> call(final TableColumn<Book, Void> param) {
+                return new TableCell<>() {
+
+                    private final Button btn = new Button("Delete");
+
+                    {
+                        btn.setOnAction((ActionEvent event) -> {
+                            Book data = getTableView().getItems().get(getIndex());
+                            // Hier Aktion mit dem Objekt data ausführen
+                        });
+                    }
+
+                    @Override
+                    public void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(btn);
+                        }
+                    }
+                };
+            }
+        };
+
+        availableDeleteColumn.setCellFactory(deleteCellFactory);
+        borrowedDeleteColumn.setCellFactory(deleteCellFactory);
+        unavailableDeleteColumn.setCellFactory(deleteCellFactory);
 
         borrowedTitleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         borrowedAuthorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
@@ -130,10 +207,10 @@ public class LibraryTrackingController implements Initializable {
         List<Book> availableBooks = CsvReader.readBooksFromCsvByStatus("books.csv", Status.AVAILABLE);
         tvAvailableBooks.getItems().setAll(availableBooks);
 
-        List<Book> borrowedBooks = CsvReader.readBooksFromCsvByStatus("books.csv", Status.AVAILABLE);
+        List<Book> borrowedBooks = CsvReader.readBooksFromCsvByStatus("books.csv", Status.BORROWED);
         tvBorrowedBooks.getItems().setAll(borrowedBooks);
 
-        List<Book> unavailableBooks = CsvReader.readBooksFromCsvByStatus("books.csv", Status.AVAILABLE);
+        List<Book> unavailableBooks = CsvReader.readBooksFromCsvByStatus("books.csv", Status.UNAVAILABLE);
         tvUnavailableBooks.getItems().setAll(unavailableBooks);
 
     }

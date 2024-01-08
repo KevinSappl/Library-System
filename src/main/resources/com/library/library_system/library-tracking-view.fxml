@@ -19,8 +19,8 @@
                       <TableColumn fx:id="availablePublicationDateColumn" prefWidth="75.0" text="Publication Date" />
                       <TableColumn fx:id="availablePagesColumn" prefWidth="75.0" text="Pages" />
                       <TableColumn fx:id="availableStatusColumn" prefWidth="75.0" text="State" />
-                      <TableColumn prefWidth="75.0" text="Edit" />
-                      <TableColumn prefWidth="25.142837524414062" text="Delete" />
+                      <TableColumn fx:id="availableEditColumn" prefWidth="75.0" text="Edit" />
+                      <TableColumn fx:id="availableDeleteColumn" prefWidth="75.0" text="Delete" />
                   </columns>
                   <columnResizePolicy>
                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -36,8 +36,8 @@
                       <TableColumn fx:id="borrowedPublicationDateColumn" prefWidth="75.0" text="Publication Date" />
                       <TableColumn fx:id="borrowedPagesColumn" prefWidth="75.0" text="Pages" />
                       <TableColumn fx:id="borrowedStatusColumn" prefWidth="75.0" text="State" />
-                      <TableColumn prefWidth="75.0" text="Edit" />
-                      <TableColumn prefWidth="25.142837524414062" text="Delete" />
+                      <TableColumn fx:id="borrowedEditColumn" prefWidth="75.0" text="Edit" />
+                      <TableColumn fx:id="borrowedDeleteColumn" prefWidth="75.0" text="Delete" />
                   </columns>
                   <columnResizePolicy>
                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -53,8 +53,8 @@
                         <TableColumn fx:id="unavailablePublicationDateColumn" prefWidth="75.0" text="Publication Date" />
                         <TableColumn fx:id="unavailablePagesColumn" prefWidth="75.0" text="Pages" />
                         <TableColumn fx:id="unavailableStatusColumn" prefWidth="75.0" text="State" />
-                        <TableColumn prefWidth="75.0" text="Edit" />
-                        <TableColumn prefWidth="25.142837524414062" text="Delete" />
+                        <TableColumn fx:id="unavailableEditColumn" prefWidth="75.0" text="Edit" />
+                        <TableColumn fx:id="unavailableDeleteColumn" prefWidth="75.0" text="Delete" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
