@@ -5,6 +5,7 @@ import data.CsvWriter;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class Book {
     private int id;
@@ -91,8 +92,24 @@ public class Book {
     public static void writeData(Book book) {
         CsvWriter.writeBookToCsv("books.csv", book);
     }
+    public static void writeData(List<Book> books) {
+        CsvWriter.writeBooksToCsv("books.csv", books);
+    }
 
     public static List<Book> readData() {
         return CsvReader.readBooksFromCsv("books.csv");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return id == book.id && pages == book.pages && Objects.equals(title, book.title) && Objects.equals(author, book.author) && Objects.equals(isbn, book.isbn) && Objects.equals(publicationDate, book.publicationDate) && status == book.status;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, author, isbn, pages, publicationDate, status);
     }
 }

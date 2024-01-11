@@ -5,21 +5,18 @@ import bll.Book;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Date;
 import java.util.Locale;
 
 public class CsvWriter {
     static SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMAN);
     public static void writeBooksToCsv(String fileName, List<Book> books) {
         File file = new File(fileName);
-        boolean writeHeader = !file.exists();
 
         try (FileWriter writer = new FileWriter(file, false)) {
-            if (writeHeader) {
-                writer.append("Title,Author,ISBN,Pages,PublicationDate,Status\n");
-            }
+            writer.append("Title,Author,ISBN,Pages,PublicationDate,Status\n");
             int count = 1;
             for (Book book : books) {
+                book.setId(count);
                 writer.append(Integer.toString(count))
                         .append(",")
                         .append(book.getTitle())

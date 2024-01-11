@@ -2,6 +2,7 @@ package com.library.library_system;
 
 import bll.Book;
 import bll.Status;
+import dao.BookDao;
 import data.CsvReader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -80,6 +81,7 @@ public class LibraryTrackingController implements Initializable {
     TableColumn unavailableEditColumn;
     @FXML
     TableColumn unavailableDeleteColumn;
+    BookDao bookDao = new BookDao();
 
 
     SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
@@ -148,6 +150,8 @@ public class LibraryTrackingController implements Initializable {
                         btn.setOnAction((ActionEvent event) -> {
                             Book data = getTableView().getItems().get(getIndex());
                             // Hier Aktion mit dem Objekt data ausführen
+                            bookDao.delete(data);
+                            loadBooks();
                         });
                     }
 
@@ -210,13 +214,13 @@ public class LibraryTrackingController implements Initializable {
     }
 
     private void loadBooks() {
-        List<Book> availableBooks = CsvReader.readBooksFromCsvByStatus("books.csv", Status.AVAILABLE);
+        List<Book> availableBooks = bookDao.getBooksByStatus(Status.AVAILABLE);
         tvAvailableBooks.getItems().setAll(availableBooks);
 
-        List<Book> borrowedBooks = CsvReader.readBooksFromCsvByStatus("books.csv", Status.BORROWED);
+        List<Book> borrowedBooks = bookDao.getBooksByStatus(Status.BORROWED);
         tvBorrowedBooks.getItems().setAll(borrowedBooks);
 
-        List<Book> unavailableBooks = CsvReader.readBooksFromCsvByStatus("books.csv", Status.UNAVAILABLE);
+        List<Book> unavailableBooks = bookDao.getBooksByStatus(Status.UNAVAILABLE);
         tvUnavailableBooks.getItems().setAll(unavailableBooks);
 
     }
@@ -231,6 +235,7 @@ public class LibraryTrackingController implements Initializable {
             Stage editStage = new Stage();
             editStage.setScene(new Scene(root));
             editStage.show();
+            editStage.setOnCloseRequest(windowEvent -> loadBooks());
         } catch (IOException e) {
             e.printStackTrace();
         }

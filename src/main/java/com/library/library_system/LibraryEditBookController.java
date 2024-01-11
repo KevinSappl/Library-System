@@ -4,9 +4,14 @@ import bll.Book;
 import bll.Status;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.time.Instant;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Date;
 
 public class LibraryEditBookController {
 
@@ -27,6 +32,7 @@ public class LibraryEditBookController {
 
     @FXML
     private ComboBox<Status> cbState;
+    Book currentBook;
 
     public void initialize() {
         ObservableList<Status> statusList = FXCollections.observableArrayList(Status.values());
@@ -38,11 +44,29 @@ public class LibraryEditBookController {
         spPages.setValueFactory(valueFactory);
     }
     public void setBookDetails(Book book) {
+        currentBook=book;
         tfBookTitle.setText(book.getTitle());
         tfAuthor.setText(book.getAuthor());
         tfISBN.setText(book.getIsbn());
         dpDate.setValue(book.getPublicationDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
         spPages.getValueFactory().setValue(book.getPages());
         cbState.setValue(book.getStatus());
+    }
+
+    public void saveBook(ActionEvent actionEvent) {
+        currentBook.setTitle(tfBookTitle.getText());
+        currentBook.setAuthor(tfAuthor.getText());
+        currentBook.setIsbn(tfISBN.getText());
+
+        // Konvertieren von LocalDate zu Instant
+        ZonedDateTime zonedDateTime = dpDate.getValue().atStartOfDay(ZoneId.systemDefault());
+        Instant instant = zonedDateTime.toInstant();
+
+        // Konvertieren von Instant zu Date
+        Date date = Date.from(instant);
+
+        currentBook.setPublicationDate(date);
+        currentBook.setPages(spPages.getValue());
+        currentBook.setStatus(cbState.getValue());
     }
 }

@@ -33,6 +33,7 @@ public class LibraryAddBookController implements Initializable {
     private void onClickAdd(ActionEvent event) {
         if(checkInput()) {
             Book.writeData(new Book(tfBookTitle.getText(), tfAuthor.getText(), tfISBN.getText(), spPages.getValue(), Date.from(dpDate.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant()), Status.AVAILABLE));
+            lbStatus.setText("Book " + tfBookTitle.getText() + " successfully added");
         }
         else {
             lbStatus.setText("Invalid input");
