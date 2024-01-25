@@ -104,5 +104,36 @@ public class CsvReader {
 
         return books;
     }
+
+    public static List<Book> readBooksFromCsvByText(String fileName, String text) {
+        List<Book> books = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            br.readLine(); // Überspringen der Kopfzeile
+
+            while ((line = br.readLine()) != null) {
+                String[] bookData = line.split(",");
+
+                if (bookData.length >= 6 && Objects.equals(bookData[1], text) || bookData.length >= 6 && Objects.equals(bookData[2], text) || bookData.length >= 6 && Objects.equals(bookData[3], text)) {
+                    int id = Integer.parseInt(bookData[0]);
+                    String title = bookData[1];
+                    String author = bookData[2];
+                    String isbn = bookData[3];
+                    int pages = Integer.parseInt(bookData[4]);
+                    Date publicationDate = sdf.parse(bookData[5]);
+                    Status status = Status.valueOf(bookData[6]); // Annahme, dass Status ein enum ist
+
+                    books.add(new Book(id, title, author, isbn, pages, publicationDate, status));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+        return books;
+    }
 }
 

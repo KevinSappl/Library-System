@@ -132,13 +132,23 @@ public class LibraryResultController implements Initializable {
     private void loadBooks() {
         List<Book> availableBooks = CsvReader.readBooksFromCsvByTitle("books.csv", text);
         tvBooks.getItems().setAll(availableBooks);
+    }
 
+    private void loadBooksByText() {
+        List<Book> availableBooks = CsvReader.readBooksFromCsvByText("books.csv", text);
+        tvBooks.getItems().setAll(availableBooks);
     }
 
     public void setTitle(String text) {
         this.text = text;
         loadBooks();
     }
+
+    public void setText(String text) {
+        this.text = text;
+        loadBooksByText();
+    }
+
     private void openEditWindow(Book book) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("library-editBook-view.fxml"));

@@ -91,7 +91,7 @@ public class LibraryStartController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("library-result-view.fxml"));
             Parent root = loader.load();
             LibraryResultController libraryResultController = loader.getController();
-            libraryResultController.setTitle(tfSearchBooks.getText());
+            libraryResultController.setText(tfSearchBooks.getText());
 
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
