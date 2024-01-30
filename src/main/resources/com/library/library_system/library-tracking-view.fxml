@@ -19,6 +19,7 @@
                       <TableColumn fx:id="availablePublicationDateColumn" prefWidth="75.0" text="Publication Date" />
                       <TableColumn fx:id="availablePagesColumn" prefWidth="75.0" text="Pages" />
                       <TableColumn fx:id="availableStatusColumn" prefWidth="75.0" text="State" />
+                     <TableColumn fx:id="availableBorrowColumn" prefWidth="75.0" text="Borrow" />
                       <TableColumn fx:id="availableEditColumn" prefWidth="75.0" text="Edit" />
                       <TableColumn fx:id="availableDeleteColumn" prefWidth="75.0" text="Delete" />
                   </columns>
@@ -36,6 +37,7 @@
                       <TableColumn fx:id="borrowedPublicationDateColumn" prefWidth="75.0" text="Publication Date" />
                       <TableColumn fx:id="borrowedPagesColumn" prefWidth="75.0" text="Pages" />
                       <TableColumn fx:id="borrowedStatusColumn" prefWidth="75.0" text="State" />
+                     <TableColumn fx:id="borrowedReturnColumn" prefWidth="75.0" text="Return" />
                       <TableColumn fx:id="borrowedEditColumn" prefWidth="75.0" text="Edit" />
                       <TableColumn fx:id="borrowedDeleteColumn" prefWidth="75.0" text="Delete" />
                   </columns>

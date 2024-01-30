@@ -2,11 +2,13 @@ package com.library.library_system;
 
 import bll.Book;
 import bll.Status;
+import dao.BookDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.time.Instant;
 import java.time.ZoneId;
@@ -32,6 +34,7 @@ public class LibraryEditBookController {
 
     @FXML
     private ComboBox<Status> cbState;
+    BookDao bookDao = new BookDao();
     Book currentBook;
 
     public void initialize() {
@@ -54,6 +57,7 @@ public class LibraryEditBookController {
     }
 
     public void saveBook(ActionEvent actionEvent) {
+        bookDao.delete(currentBook);
         currentBook.setTitle(tfBookTitle.getText());
         currentBook.setAuthor(tfAuthor.getText());
         currentBook.setIsbn(tfISBN.getText());
@@ -68,5 +72,9 @@ public class LibraryEditBookController {
         currentBook.setPublicationDate(date);
         currentBook.setPages(spPages.getValue());
         currentBook.setStatus(cbState.getValue());
+        bookDao.insert(currentBook);
+
+        Stage stage = (Stage) tfBookTitle.getScene().getWindow();
+        stage.close();
     }
 }

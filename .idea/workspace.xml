@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="398dae56-35e7-485a-b7dd-b41affb27972" name="Changes" comment="Add Books has now additional parameter">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bll/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bll/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryAddBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryAddBookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryEditBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryEditBookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/CsvReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CsvReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/CsvWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CsvWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-editBook-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-editBook-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-tracking-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/library/library_system/library-tracking-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +26,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -38,19 +42,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sappl/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.35287356&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.LibraryStart.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/sappl/AppData/Local/SceneBuilder/SceneBuilder.exe",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.35287356",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sappl\OneDrive - Alpen-Adria Universität Klagenfurt\2023_WS\Interaktive Systeme\Library System Group F\src\main\java\data" />
@@ -77,6 +83,13 @@
         <item itemvalue="Application.LibraryStart" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -120,15 +133,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryResultController.java</url>
-          <line>139</line>
+          <line>143</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dao/BookDao.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/library/library_system/LibraryTrackingController.java</url>
+          <line>306</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="getBookById(book.getId())" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -15,6 +15,7 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -27,6 +28,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class LibraryTrackingController implements Initializable {
+    @FXML
+    public TableColumn borrowedReturnColumn;
+    @FXML
+    public TableColumn availableBorrowColumn;
     @FXML
     TableView<Book> tvAvailableBooks;
     @FXML
@@ -167,10 +172,73 @@ public class LibraryTrackingController implements Initializable {
                 };
             }
         };
+        Callback<TableColumn<Book, Void>, TableCell<Book, Void>> borrowCellFactory = new Callback<>() {
+            @Override
+            public TableCell<Book, Void> call(final TableColumn<Book, Void> param) {
+                return new TableCell<>() {
+
+                    private final Button btn = new Button("Borrow");
+
+                    {
+                        btn.setOnAction((ActionEvent event) -> {
+                            Book data = getTableView().getItems().get(getIndex());
+                            // Hier Aktion mit dem Objekt data ausführen
+                            bookDao.delete(data);
+                            data.setStatus(Status.BORROWED);
+                            bookDao.insert(data);
+                            loadBooks();
+                        });
+                    }
+
+                    @Override
+                    public void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(btn);
+                        }
+                    }
+                };
+            }
+        };
+
+        Callback<TableColumn<Book, Void>, TableCell<Book, Void>> returnCellFactory = new Callback<>() {
+            @Override
+            public TableCell<Book, Void> call(final TableColumn<Book, Void> param) {
+                return new TableCell<>() {
+                    private final Button btn = new Button("Return");
+
+                    {
+                        btn.setOnAction((ActionEvent event) -> {
+                            Book data = getTableView().getItems().get(getIndex());
+                            // Hier Aktion mit dem Objekt data ausführen
+                            bookDao.delete(data);
+                            data.setStatus(Status.AVAILABLE);
+                            bookDao.insert(data);
+                            loadBooks();
+                        });
+                    }
+
+                    @Override
+                    public void updateItem(Void item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                        } else {
+                            setGraphic(btn);
+                        }
+                    }
+                };
+            }
+        };
 
         availableDeleteColumn.setCellFactory(deleteCellFactory);
         borrowedDeleteColumn.setCellFactory(deleteCellFactory);
         unavailableDeleteColumn.setCellFactory(deleteCellFactory);
+
+        availableBorrowColumn.setCellFactory(borrowCellFactory);
+        borrowedReturnColumn.setCellFactory(returnCellFactory);
 
         borrowedTitleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         borrowedAuthorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
@@ -233,9 +301,11 @@ public class LibraryTrackingController implements Initializable {
             editBookController.setBookDetails(book);
 
             Stage editStage = new Stage();
+            editStage.initModality(Modality.APPLICATION_MODAL);
             editStage.setScene(new Scene(root));
-            editStage.show();
+            editStage.showAndWait();
             editStage.setOnCloseRequest(windowEvent -> loadBooks());
+            loadBooks();
         } catch (IOException e) {
             e.printStackTrace();
         }
